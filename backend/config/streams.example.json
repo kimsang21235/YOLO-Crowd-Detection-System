@@ -1,0 +1,18 @@
+{
+  "stream1": {
+    "type": "youtube",
+    "path": "https://www.youtube.com/watch?v=EXAMPLE_ID"
+  },
+  "stream2": {
+    "type": "http",
+    "path": "http://your-ip:port/stream"
+  },
+  "stream3": {
+    "type": "rtsp",
+    "path": "rtsp://your-ip:8554/stream3"
+  },
+  "stream4": {
+    "type": "local",
+    "path": "/path/to/local/video.mp4"
+  }
+}

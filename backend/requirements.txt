@@ -1,0 +1,16 @@
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+python-multipart==0.0.20
+starlette==0.47.3
+pydantic==2.11.9
+pydantic-settings==2.9.1
+numpy==1.26.4
+opencv-python==4.11.0.86
+ultralytics==8.3.200
+torch==2.2.2
+yt-dlp==2025.9.5
+streamlink
+# FFmpeg must be installed separately as a system package:
+#   macOS : brew install ffmpeg
+#   Ubuntu: sudo apt install ffmpeg
+#   Windows: https://ffmpeg.org/download.html

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+.env
+
+# YOLO model weights — download separately, do NOT commit
+backend/models/*.pt
+backend/models/*.onnx
+
+# Backend runtime files
+backend/data/uploads/*
+backend/data/outputs/*
+!backend/data/uploads/.gitkeep
+!backend/data/outputs/.gitkeep
+
+# Node
+frontend/node_modules/
+frontend/build/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,336 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #FFFFFF; /* 배경색을 흰색으로 변경 */
+    color: #333;
+    margin: 0;
+    overflow-y: hidden; /* 스크롤 비활성화 */
+}
+
+.container {
+    display: flex;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto; /* 스크롤 활성화 */
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.page-container {
+    background: white;
+    padding: 5px 40px 5px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1500px; /* 너비 확장 */
+    margin: 1px auto; /* 위아래 마진 추가 */
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+header h2 {
+    margin-right: auto;
+}
+
+header .actions button {
+    margin-left: 10px;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+header .actions button:hover {
+    background-color: #FFECB3;
+}
+
+section {}
+
+.analysis-section {
+    margin-bottom: 20px;
+}
+
+.analysis-section h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    margin-bottom: 25px;
+}
+
+.upload-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 2px dashed #ddd;
+    border-radius: 5px;
+    background-color: #FFF8E1;
+    margin: 30px 0; /* Keep existing margin */
+}
+
+input[type="file"] {
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* 버튼 사이 간격 */
+    flex-wrap: wrap;
+}
+
+.analyze-button {
+    padding: 10px 20px; /* Changed */
+    font-size: 16px; /* Changed */
+    color: white;
+    border: none;
+    background-color: #FFA000; /* Changed */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 150px; /* Added */
+    font-weight: normal; /* Changed from bold */
+}
+
+.analyze-button:disabled {
+    background-color: #95a5a6; /* Keep existing */
+    cursor: not-allowed; /* Keep existing */
+}
+
+.analyze-button:hover:not(:disabled) {
+    background-color: #FFB300; /* Adapted hover */
+    transform: none; /* Remove existing transform */
+    box-shadow: none; /* Remove existing box-shadow */
+}
+
+.result-section {
+    margin-top: 40px;
+    /* Add wrapper styles for aspect ratio */
+    width: 100%;
+    max-width: 800px; /* Keep max-width from current result-video */
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 5px; /* Match original video-wrapper */
+    margin: 40px auto; /* Center the result section */
+}
+
+.result-section h3 {
+    color: #2c3e50;
+    margin-bottom: 20px; /* Add some space below heading */
+}
+
+.result-video {
+    width: 100%;
+    height: 100%; /* Fill the wrapper */
+    border-radius: 0; /* Let wrapper handle border-radius */
+    margin-top: 0; /* No margin, fill wrapper */
+    border: 0; /* No border, let wrapper handle it if needed */
+}
+
+.status-message {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.status-message.loading {
+    color: #f39c12;
+}
+
+.status-message.error {
+    color: #e74c3c;
+}
+
+.status-message.success {
+    color: #2ecc71;
+}
+
+.deid-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.tracking-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.deid-main-controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* De-id Options Panel */
+.deid-options {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.option-choices {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option-choices button {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    color: #333;
+    width: 100px;
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.option-choices button.active, .option-choices button:hover {
+    border-color: #FFA000;
+    background-color: #FFECB3;
+}
+
+.intensity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 220px;
+}
+
+.intensity-control input[type="range"] {
+    width: 100px;
+}
+
+.camera-selection {
+    /* Add any specific camera-selection styles if needed, otherwise default */
+}
+
+/* Re-style stream-selector buttons to match original design's button aesthetic */
+.stream-selector.button-group {
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.stream-selector button:hover {
+    background-color: #FFB300; /* Match general button hover */
+}
+
+.stream-selector button.active {
+    background-color: #FFB300; /* Match active sidebar link */
+    color: white;
+    border-color: transparent; /* Remove border */
+    font-weight: normal; /* Remove bold */
+}
+
+/* Re-style analysis buttons within video-container to match general button aesthetic */
+.video-container .button-group button {
+    display: flex;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #FFA000; /* Match general button color */
+    color: white;
+    border: none; /* Remove border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 150px; /* Match general button width */
+    justify-content: center;
+     gap: 15px;
+}
+/* .video-container .button-group {
+    
+    
+   
+} */
+
+.video-container .button-group button:hover {
+    background-color: #FFB300; /* Match general button hover */
+}
+
+.video-container .button-group button.active.count,
+.video-container .button-group button.active.mosaic,
+.video-container .button-group button.active.heatmap {
+    background-color: #FFB300; /* Match active sidebar link */
+    color: white;
+    border-color: transparent; /* Remove border */
+    font-weight: normal; /* Remove bold */
+}
+
+
+.video-container {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.video-header {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* 제목과 버튼 간 거리 */
+    text-align: center;
+
+    margin: 5px 0;
+}
+.video-header h3 {
+  white-space: nowrap;
+}
+
+
+.video-controls {
+    display: flex;
+    flex-direction: column; /* 카메라 버튼 줄 + 분석 버튼 줄을 세로 배치 */
+    align-items: center; /* 가운데 정렬 */
+    justify-content: center;
+    gap: 20px; /* 두 줄 사이 간격 */
+    width: 100%;
+}
+
+.video-grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+}
+
+.video-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 5px;
+    overflow: hidden; /* 자식 요소가 부모 요소를 넘지 않도록 함 */
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.stream-video {
+    width: 100%;
+    height: auto;
+    max-width: 100%; /* Added */
+    max-height: 100%; /* Added */
+    border-radius: 6px;
+    background-color: #000;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
